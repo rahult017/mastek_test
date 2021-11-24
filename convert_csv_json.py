@@ -115,7 +115,7 @@ def iterate_dataframe(df, root):
         }
         return response
 
-def write_to_disk(json_file):
+def write_to_json(json_file):
     try:
         #write to disk
         with open("data.json", "w") as outfile:
@@ -131,7 +131,7 @@ try:
     file_name = "data.csv"
     response = preprocess_file(file_name)
     response = iterate_dataframe(response['df'], response['root'])
-    status = write_to_disk(response['json_file'])
+    status = write_to_json(response['json_file'])
     if status == True:
         print("Success")
 except Exception as e:
